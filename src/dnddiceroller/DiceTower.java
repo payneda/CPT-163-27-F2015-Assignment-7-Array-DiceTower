@@ -2,6 +2,7 @@ package dnddiceroller;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 /**
  * Dice Tower.
@@ -17,7 +18,8 @@ import java.util.List;
 public class DiceTower {
   final int PANEL_COUNT = 3;
   List<Die> dice;
-
+  private int dieNumbers;
+  
   public DiceTower() {
 	this.dice = new ArrayList();
   }
@@ -25,4 +27,19 @@ public class DiceTower {
   public DiceTower(List dice) {
 	this.dice = dice;
   }
+
+    void dropDice() {
+        for (int i = 0; i < 6; i++) {
+            Random rand = new Random();
+            int dieNumbers = rand.nextInt(7);
+        }
+            
+            
+    }
+
+    int trayValue() {
+        this.dieNumbers = trayValue();
+        return trayValue();
+    }
 }
+
