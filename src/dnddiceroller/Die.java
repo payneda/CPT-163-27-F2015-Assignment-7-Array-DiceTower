@@ -8,5 +8,31 @@ package dnddiceroller;
  * @author Paul Scarrone
  */
 public class Die {
-  
+       private int dieNumber;
+       private int value[];
+    Die(int dieNumber) {
+        this.dieNumber = roll();
+    }
+    public int setDieNumber(){
+        return roll();
+    }
+    public int getDieNumber(){
+        return setDieNumber();
+    }
+    
+    public int roll() {
+        int[] value = {1,2,3,4,5};
+        value[0] = 1;
+        value[1] = 2;
+        value[2] = 3;
+        value[3] = 4;
+        value[4] = 5;
+        
+        return value();
+    }
+
+    public int value() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
 }
