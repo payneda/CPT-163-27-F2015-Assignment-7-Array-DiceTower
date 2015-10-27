@@ -1,45 +1,30 @@
 package dnddiceroller;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 
 /**
- * Dice Tower.
- * A Dice Tower is a tool used by serious gamers use to roll many dice at once.
- * It looks like this https://www.miniaturescenery.com/Images/PortableDiceTowerLarge.jpg
- * An instance of a dice tower is defined by the number panels it contains to help
- * provide a more regular distribution of die values. The die bounce from panel to
- * panel until they exit the dice tower at the bottom tray.
- * A dice tower will accept a collection of dice and reports their results when
- * they reach the tray at the bottom
+ * A Die is a many sided object that when rolled provides a random value from
+ * 1 through the number of sides on the object. Some dice are 6 sided and have
+ * the numbers 1-6 on them. Some dice are 20 sided with the numbers 1-20 on them.
+ * Others are called fudge dice and have the values of -1 0 or +1
  * @author Paul Scarrone
  */
-public class DiceTower {
-  final int PANEL_COUNT = 3;
-  List<Die> dice;
-  private int dieNumbers;
-  
-  public DiceTower() {
-	this.dice = new ArrayList();
-  }
-  
-  public DiceTower(List dice) {
-	this.dice = dice;
-  }
-
-    void dropDice() {
-        for (int i = 0; i < 6; i++) {
-            Random rand = new Random();
-            int dieNumbers = rand.nextInt(7);
-        }
-            
-            
-    }
-
-    int trayValue() {
-        this.dieNumbers = trayValue();
-        return trayValue();
-    }
+public class Die {
+    private int die;
+    private int value;
+    private Random dieSide = new Random();
+   
+    public Die(int die) {
+       this.die = die;
+       
 }
 
+    public void roll() {
+        value = dieSide.nextInt(die) + 1;// dieSide is equal to 0 thri (die -1).
+        //System.out.println(value);
+    }
+
+    public int value() {
+        return this.value;
+    }
+}
